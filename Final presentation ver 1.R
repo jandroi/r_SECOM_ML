@@ -17,7 +17,7 @@ p_load(MLmetrics)
 
 #====================================== 1. Data Loading ========================================================
 # Read the SPSS data file and setting it up as a data frame
-secom_1<- read.spss("C:/Users/sszfo/Desktop/MPMD 2nd Semester/Data Mining/A03_Case_Study_SEMICONDUCTOR/secom_mod.SAV", to.data.frame = TRUE)
+secom_1<- read.spss("data/secom_mod.SAV", to.data.frame = TRUE)
 
 # split data to training and test sets
 set.seed(500)
@@ -62,8 +62,8 @@ sum(is.na(training_set))
 # ============================== 6. Important Features selection  ==================================
 #Boruta
 set.seed(500)
-boruta_train <- Boruta(class ~ ., 
-                       data = training_set, 
+boruta_train <- Boruta(class ~ .,
+                       data = training_set,
                        doTrace=2, maxRuns=500)
 
 # print names of important features
@@ -74,7 +74,7 @@ print(paste("feature nonrejected:",getNonRejectedFormula(boruta_train)))
 plotImpHistory(boruta_train)
 
 # Selected Features
-training_selected <- as.data.frame(training_set[,c("class","feature081", 
+training_selected <- as.data.frame(training_set[,c("class","feature081",
                      getSelectedAttributes(boruta_train))])
 
 #ROSE balanced
@@ -100,7 +100,7 @@ test_set <- test_set[, -which(colMeans(is.na(test_set)) > 0.55)]
 
 test_set$class <- as.factor(test_set$class)
 
-# Outlier removal from test dataset 
+# Outlier removal from test dataset
 test_set[,2:ncol(test_set)] <- data.frame(sapply(test_set[,2:ncol(test_set)],OTONA))
 
 # Impute missing value using KNN
@@ -126,11 +126,3 @@ confusionMatrix(RF_rose_pred, as.factor(test_set$class), positive = "1")
 roc.curve(test_set$class, RF_rose_pred, plotit = T, main ="ROC curve / Rose")
 
 cat("F1 score: ",F1_Score(test_set$class, RF_rose_pred, positive = "1"),"\n")
-
-
-
-
-
-
-
-
