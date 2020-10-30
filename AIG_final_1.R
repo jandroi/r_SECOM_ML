@@ -1,11 +1,10 @@
 # === PREPARE SYSTEM
-## Prepared
 # set language to English
 Sys.setenv(LANG = "en")
 if (!require("pacman")) install.packages("pacman")
 if (!require("lattice")) install.packages("lattice")
 if (!require("ggplot2")) install.packages("ggplot2")
-# Step 1: Install and load R Packages 
+# Step 1: Install and load R Packages
 library(pacman)
 p_load(data.table)
 p_load(curl)
@@ -46,8 +45,8 @@ train <- knnImputation(train, k=5, scale = T, meth = "weighAvg", distData = NULL
 
 # ====================================== 6. Feature Selection ===================================
 p_load(Boruta)
-boruta_train2 <- Boruta(class ~ ., 
-                       data = train, 
+boruta_train2 <- Boruta(class ~ .,
+                       data = train,
                        doTrace=2)
 
 train_selected <- as.data.frame(train[,c("class",getSelectedAttributes(boruta_train2, withTentative = TRUE))])
@@ -82,5 +81,3 @@ confusionMatrix(table(model_pred, test$class), positive = "1")
 cat("F1 score: ",F1_Score(test$class, model_pred, positive='1'),"\n")
 confusionMatrix(table(model_pred, test$class), positive="1")
 roc.curve(test$class, model_pred, plotit = T, main="RF_Model")
-
-
