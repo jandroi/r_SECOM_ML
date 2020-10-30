@@ -1,4 +1,5 @@
 # === PREPARE SYSTEM
+# JAIG
 # set language to English
 Sys.setenv(LANG = "en")
 if (!require("pacman")) install.packages("pacman")
