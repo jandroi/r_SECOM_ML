@@ -11,7 +11,7 @@ p_load(MLmetrics)     # F1 score
 
 # ====================================== 1. Data Loading  ========================================
 # Load SPSS data file as data frame
-secom_1<- read.spss("C:/Users/sszfo/Desktop/MPMD 2nd Semester/Data Mining/A03_Case_Study_SEMICONDUCTOR/secom_mod.SAV", to.data.frame = TRUE)
+secom_1<- read.spss("data/secom_mod.SAV", to.data.frame = TRUE)
 
 # ====================================== 2. Split ================================================
 set.seed(500)
