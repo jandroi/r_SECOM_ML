@@ -1,6 +1,6 @@
 # Readme1
-<<<<<<< HEAD
-# Master Local
-=======
 # JAIG
->>>>>>> JAIG
+
+# AIG
+
+# Master Local
