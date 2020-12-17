@@ -1,54 +1,55 @@
 > Project prepared by \
 > Denise Marchena \
 > Alka Parmar \
-> Tsung Han Wang\w
-> Alejandro Iglesias
+> Tsung Han Wang\
+> Alejandro Iglesias  
 >> Extract from project
 
-
+# SECOM ML Case
+# Predicting Quality in Semiconductor Industry
 ## 1	Introduction
-The semiconductor manufacturing process is very complex and holds an enormous amount of data gathered from various sensors. The gathered data contains critical information regarding each produced item as well as the yield of the production line, which is vital while doing quality control of the entity. Therefore, how this data was handled plays really important role. Handling the obtained data could be tricky as many equipment and sensors are involved that, too, for an extended period of the time results in extensive data. Moreover, it is challenging to identify failure, just looking at the process. Lastly, being an engineering process in practical application, it is very typical to have noise and missing values in the data. This fact generates the need for feature selection (Salem, Taheri and Yuan, 2018).
+The semiconductor manufacturing process is very complex and holds an enormous amount of data gathered from various sensors. The gathered data contains critical information regarding each produced item as well as the yield of the production line, which is vital while doing quality control of the entity. [...]
 In this paper, the SECOM dataset was taken as an example of semiconductor data. This dataset obtains information regarding instances of a pass and fail, the ratio of a pass to fail is 15:1, which is highly imbalanced, with many missing values and many noisy features. Therefore, this dataset is appropriate for the realistic classification of task fault detection with a parsimonious model.
-The main issue involves in the semiconductor manufacturing process is accurate and with-in time, detection of any kind of fault in the inline process. This paper aims to build one efficient model to predict a binary target feature that included in the SECOM dataset.  This paper fallows CRISP-DM as a structure. It uses R language to conduct each step of the data handling framework.
+[...].
 
 ### 1.1	CRISP – DM
-Cross-Industry Standard Process for Data Mining (CRISP – DM) is a comprehensive data mining methodology and process model which suggests a general blueprint for conducting a data mining project with integrated data requirements. It focuses on business issues as well as technical analysis and breaks down the life cycle of project into six phases. These six phases establish the overall knowledge needed to collect, transform and make data useful to improve decisions and support its operating business model.  As mentioned ear-lier CRISP – DM breaks down the life cycle of a data mining project consists of six phases namely business understanding, data understanding, data preparation, modeling, evalua-tion and last is deployment (Chapman, 2020).
+[...] (CRISP – DM) is a comprehensive data mining methodology and process model which suggests a general blueprint for conducting a data mining project with integrated data requirements. It focuses on business issues as well as technical analysis and breaks down the life cycle of project into six phases. These six phases establish the overall knowledge needed to collect, transform and make data useful to improve decisions and support its operating business model.  As mentioned earlier CRISP – DM breaks down the life cycle of a data mining project consists of six phases namely business understanding, data understanding, data preparation, modeling, evaluation and last is deployment (Chapman, 2020).
 
+> [...]
 > Figure 1 Process of Data Mining
 
-The figure above shows the phases of a data mining process. The sequence of the phases is not strict. Moving back and forth between different phases is always required and it also depends on the outcome of each phase which phase, or which task of a phase, must be performed next. The arrows indicate the most important and frequent dependencies be-tween phases. Each of the steps followed will be described in detail in the following sec-tions.
-The outer circle in Figure 1 shows the iterative nature of data mining process itself. The focus of this paper is to present the steps, methodology and general findings of the pro-cess initiated with the SECOM dataset (Chapman, 2020).  
+[...].  
 
 ## 2	Business Understanding
-In the era of digitalization, almost all manufacturing tools are equipped with sensors to gather real-time information of the production process. These sensor data provide critical information that can be used in fault detection as well as inefficient optimization of pro-cess and control. Because of extensive data, the process is a bit overwhelming, and within time detection of the fault during the process is challenging. In this paper, the main focus is timely detection of the fault in wafer manufacturing of semiconductor industry, which leads to saving the overall cost of the customer. The business objective and success crite-ria are as follows:  
+[...] almost all manufacturing tools are equipped with sensors to gather real-time information of the production process. These sensor data provide critical information that can be used in fault detection as well as inefficient optimization of pro-cess and control. Because of extensive data, the process is a bit overwhelming, and within time detection of the fault during the process is challenging. In this paper, the main focus is timely detection of the fault in wafer manufacturing of semiconductor industry, which leads to saving the overall cost of the customer. The business objective and success crite-ria are as follows:  
 
 ### 2.1	Business objective  
 To predict yield failure of a semiconductor manufacturing process, to optimize the wafer manufacturing process.   
 The end goal is to build a model that help in analyzing fault as quickly as possible in order to maintain high process yield in manufacturing.   
+
 ### 2.2	Success Criteria  
 To build a parsimonious model, which will predict the faulty product of the production process, which will optimize the production time and reduce the overall cost of the pro-duction.
 
 ## 3	Data Understanding
-Predicting the future is an everyday task, it is intrinsically in the human being to take deci-sions based on information or experience. (Kuhn and Johnson, 2013). This chapter will focus on explain the initial examination conducted for the data contained in the SECOM Dataset. As previously established, this exploration is included as part of the CRISP-DM methodology and determines where to put more effort and focus in the preparation pro-cess. This stage is performed after the business understanding, where in general terms, a question that requires data or information to be answer, is being asked. In order to provide a solution to that question is important to check the elements available, first and foremost, the data that will be exploited to do so. This is the introductory chapter of getting accus-tomed with the attributes that compose the working data. It is called data to all observa-tions of a given real life situation. Every piece of data is part of reality requiring to be un-derstood. (Zheng and Casari, 2018).
-There are several points that need to be covered to access a proper knowledge of the data, which are describe within this chapter.
+[...] This stage is performed after the business understanding, where in general terms, a question that requires data or information to be answer, is being asked. In order to provide a solution to that question is important to check the elements available, first and foremost, the data that will be exploited to do so. [...].
 
 ### 3.1	Data Sources
-Data could be gathered from a variety of sources and with specific needs to be threated, different formats. One of the main reasons to execute this step is to understand where and how the data is being gathered. Where the data is coming from is relevant because it brings the path to adopt and follow, according to data requirements, throughout the analysis and preparation procedures. It is also advisable to take data requirements as the necessary items to answer the business question. The source will determine where and how the data can be accessed, whether the storage is a Datawarehouse, a relational database, a desk application or if certain technical procedures inside an ETL for data integration are neces-sary. The data architecture can also be part of this analysis, it contributes to when and how can the data be accessed, what type of infrastructure is needed.
-For the Secom Data this information has already being given into a .SAV file, nonetheless its useful to think of it as the output of a data integration methods, this is the raw data en-counter where some more analytical steps are required to be performed to gain more in-sights.
+[...]
 
 ### 3.2	Data Description
-The concept of data size is crucial in comprehend how to proceed for the modelling phase. The computational resources dedicated to process the dataset. Although a generali-zation can be assumed to express the content in terms of statistical value and technological meaning. By the end of this estimation it is possible also to identify which technology tools can help in further data manipulation.
+[...]
 The SAV file is 6 MB containing 593 columns with 1567 rows. Every row represents a record of quality control of a semiconductor production line.
-•	ID. It is a nominal variable that contains the number of records per row.  
-•	Class. It is discrete nominal variable indicating whether a record was faulty or good.  
-•	Timestamp. It is an ordinal variable indicating when the record was register includ-ing time and date. This feature is expressed as a string of characters. It may require a special treatment if it is intended to be use for modeling purposes.
-•	Features 001 to Features590. Set of features from 1 to 590 with continuous varia-bles as their content.  
+
+* ID. It is a nominal variable that contains the number of records per row.  
+* Class. It is discrete nominal variable indicating whether a record was faulty or good.  
+* Timestamp. It is an ordinal variable indicating when the record was register including time and date. This feature is expressed as a string of characters. It may require a special treatment if it is intended to be use for modeling purposes.
+* Features 001 to Features590. Set of features from 1 to 590 with continuous varia-bles as their content.  
 
 ### 3.3	Data Quality
-Once the technical aspects and details have been landed, part of the data quality estab-lishment is the statically overview. By inspecting the overall dataset there are some high-lights that are determining how data is behaving. It may also point to some inconsistency required to be treated, in the next step, to make sure the data is ready to be an input for the modeling stage. Here are the relevant aspects found on the SECOM dataset:
+[...] By inspecting the overall dataset there are some high-lights that are determining how data is behaving. It may also point to some inconsistency required to be treated, in the next step, to make sure the data is ready to be an input for the modeling stage. Here are the relevant aspects found on the SECOM dataset:
 
 #### 3.3.1	Missing Values
-It could deem as common the findings of missing value in datasets; its part of the incon-sistency of real life data, being caused by several factors including data integration issues, how the data was originally collected. The missing value paradigm was classified by (Rubin, 1976) into three categories:
+It could deem as common the findings of missing value in datasets; its part of the inconsistency of real life data, being caused by several factors including data integration issues, how the data was originally collected. The missing value paradigm was classified by (Rubin, 1976) into three categories:
 
 ##### 3.3.1.1	Missing completely as random (MCAR)
 It points that probability of missing data is equal for all cases in the dataset. The reasons why it is being missed is not given or caused by the data itself. The general assumption is MCAR can be dismissed, although it may represent loss of information. If applied to the SECOM dataset situation, thinking of it as if the power plant that sustains the computer-ized production line has gone off and all the sensors that collect the data stopped also. Even though this could be an explanation for missing data, without any confirmation is relatively unlikely.
@@ -58,6 +59,10 @@ The probability of having missing data is equal only to some groups inside the g
 If it is not missing completely at random nor missing at random, then it might be not miss-ing at random. It states that the reasons why there is missing data is unknown. If there is a strike in the company that produces the semiconductor and a riot enters the factory and disconnects the power plant, then a few months later company finishes the strike and re-covers all of the data that was collected during this event, therefore there would be half complete data. Even though is possible to predict when a riot would happen, it is somehow not easy to recognize and precisely prevent it. (van Buuren, 2018) suggests performing what – if analysis to have more insights about what is causing this kind of missingness.
 From the SECOM Dataset first overview of missing values, the following is being found, according to Figure 2:
 
+
+<p align="center">
+  <img width= height= src="data/images/missingvaluesdist.png">
+</p>
 > Figure 2 Missing Values Distribution in SECOM
 
 This graphic representation displays that 541 features have complete data, while 20 fea-tures have 20% of missing data and 16 features have more than 60% of missing values. Although the missing data in the overall picture is rather small, decisions needed to be taken for the following phase. Assumptions of what type of missing category they belong to is important because that will determine the possible method selection to solve the issue. This is the input that in chapter 5 Data Preparation: Imputation will be given a solution.
@@ -65,24 +70,33 @@ This graphic representation displays that 541 features have complete data, while
 #### 3.3.2	Imbalanced Data
 By observing the given columns, the one that registered when a record was successful or not is “class” feature. It may be the target variable upon which the model will be built. Therefore, it is crucial to understand how it is behaving. In detail this "class" variable de-termines how many faulty cases were present during the initial sampling. Class 0 means no defects and Class 1 means defects. The distribution of these classes is as follows, accord-ing to Figure 3:
 
-Figure 3 Class Distribution in SECOM
+> Figure 3 Class Distribution in SECOM
+
 The premise, pointing again to the predictive model, is that it may affect how this class is being represented on it. The model may only recognize non faulty cases, but then the pre-diction would be biased by not having a proper representation of faulty cases, which are decisive to be estimated. If the question to be answered to determine the number of faulty cases then with this original distribution, there would not be a concrete predicted result. The chapter Data Preparation: Balancing Methods suggests how to solve this issue.
 
 ### 3.3.3	Constant Values
 After applying some descriptive statistics, it was possible to see a certain odd behavior within the features. It was specifically the variance and range of these features, which were really closed to zero that showed this behavior. This means one that the same value applies to all the rows or records in that feature. It may be worth to consider including or not this type of information inside the prediction. The value is constant, therefore is al-ways going to have that value. The premise is that is not going to give any significant con-tribution or meaning to the model. Further treatment is covered further in the chapter Data Preparation – Dimensionality Reduction.
-3.3.4	Outliers
+
+### 3.3.4	Outliers
 From the SECOM Dataset point of view, taking into consideration the number of features and different range each one represents, the decided way to identify outliers is through 3 Sigma Rule. First the standardization, also known as normalization, is performed over the data points, the following formula is used.
-z^'=(x_i-x ̅)/σ_x
+> z^'=(x_i-x ̅)/σ_x
+
 Where z^' corresponds to the new standardize value, x_i is any given datapoint in the da-taset, x ̅  and σ_x are the mean/average and the standard deviation of all x datapoints. Standardization is executed to make the data comparable around its standard deviation. This allows to express the distance a datapoint has with the general mean in terms of the standard deviation. This also brings the data from being highly variable in a specific range to knowing that its means tends to zero and the standard deviation corresponding to 1 (Aggarwal, 2017). For the outlier identification once the values of every feature are stand-ardized then the assumption of boundaries is made. The rule of thumb indicates that standardize values outside 3s are outliers.
 For SECOM dataset, a function in a R Script is being traced to identify its outliers. The features taking into consideration are columns from 4 to 593, corresponding to Feature001 to Feature590.
 First the applied function converts the dataset to its standardized version:
-z_score <- ave(secom_mod[,4:593], FUN = scale)
+
+>``z_score <- ave(secom_mod[,4:593], FUN = scale)``
+
 The outlier function is defined as follows, where it is indicated that whenever a datapoint is outside the +/-3 boundaries, it should count it as 1, otherwise 0:
-z_score_id <- function(x){
-ifelse(x>3 | x< -3, 1, 0)
-}
+
+> ``z_score_id <- function(x) {``  
+> ``ifelse(x>3 | x< -3, 1, 0)``  
+> ``}``
+
 Through the sapply function, a unified conversion goes as follows:
-secom_outlier <- as.data.frame( sapply(z_score, z_score_id))
+
+> secom_outlier <- as.data.frame( sapply(z_score, z_score_id))
+
 The result is the count of outliers within every feature, by the sum of this 14,006 values are identified as outliers. Also in chapter Data Preparation – Outliers a proposed solution will be discussed.
 After describing relevant aspects of the data and with a diverse range of topics to treat to improve the input that will be given to the model, it is time to move forward to the next stage: Data Preparation.
 
@@ -217,6 +231,7 @@ Whenever the classifier makes a positive prediction, it crosses out against the 
 
 As part of the process, The first model yielded a promising 84% accuracy, by being able to predict correctly a total of 263 predictions out of the 313 possible observations in the test set. This is broken down into 255 correct negative predictions labelled as True Nega-tives (TN) and 8 True Positives (TP). Since we are trying to identify faulty products, the faulty product in this exercise is always identified as the positive class.
 After analysing this first run, as very mentioned, the iterative process started to find the best combination of parameters and methods in each step, from the data preparation up to the modeling step. Considering there can be three approaches for the missing value treat-ment, two other methods for outliers, other two methods for feature selection/reduction such as PCA and Boruta and a sea of models and model derivates; it was going to be very hard and unnecessary to cover all combinations possible. Since one of the premises of the exercise is to improve the business, there was a special focus into trying to find the best model available. The approach taken in this exercise was to find the best combination and then tune the winning model to improve it.
+
 <p align="center">
   <img width= height= src="data/images/CMtuned.png">
 </p>
